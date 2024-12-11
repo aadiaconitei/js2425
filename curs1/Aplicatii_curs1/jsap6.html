@@ -1,0 +1,109 @@
+<!DOCTYPE html>
+<html>
+
+<body>
+
+    <!-- a. -->
+    <style>
+        h1 {
+            color: #ffffff;
+            background-color: #000000;
+        }
+    </style>
+    <h1>Explicație pentru codul hexadecimal <code>#ffffff</code></h1>
+    <p>Codul hexadecimal <code>#ffffff</code> este folosit pentru a reprezenta o culoare în modelul de culori RGB
+        (<strong>Red</strong>, <strong>Green</strong>, <strong>Blue</strong>).</p>
+
+    <h2>1. Structura codului hexadecimal</h2>
+    <p>Codul are forma <code>#RRGGBB</code>, unde:</p>
+    <ul>
+        <li><strong>RR</strong>: Intensitatea culorii roșii (<em>Red</em>).</li>
+        <li><strong>GG</strong>: Intensitatea culorii verzi (<em>Green</em>).</li>
+        <li><strong>BB</strong>: Intensitatea culorii albastre (<em>Blue</em>).</li>
+    </ul>
+
+    <h2>2. Interpretarea codului <code>#ffffff</code></h2>
+    <p>În acest caz:</p>
+    <ul>
+        <li><code>RR = FF</code> → Roșu: Intensitate maximă (255).</li>
+        <li><code>GG = FF</code> → Verde: Intensitate maximă (255).</li>
+        <li><code>BB = FF</code> → Albastru: Intensitate maximă (255).</li>
+    </ul>
+    <p>Acest lucru înseamnă că toate cele trei componente de culoare sunt setate la maxim, rezultând <strong>alb
+            pur</strong>.</p>
+
+    <h2>3. Conversia din hexadecimal în decimal</h2>
+    <p>Codul <code>FF</code> în baza 16 reprezintă valoarea maximă, adică 255 în baza 10. Formula de calcul este:</p>
+    <pre>
+F × 16¹ + F × 16⁰ = 15 × 16 + 15 × 1 = 240 + 15 = 255
+    </pre>
+
+    <h2>4. Rezultatul final</h2>
+    <p>Codul <code>#ffffff</code> în RGB este:</p>
+    <pre>RGB(255, 255, 255)</pre>
+    <p>Aceasta indică alb pur, deoarece toate componentele au intensitate maximă.</p>
+
+    <h2>5. Exemple similare</h2>
+    <ul>
+        <li><code>#000000</code> → <code>RGB(0, 0, 0)</code> → <span class="color-sample black"></span> <strong>Negru
+                pur</strong>.</li>
+        <li><code>#ff0000</code> → <code>RGB(255, 0, 0)</code> → <span class="color-sample red"></span>
+            <strong>Roșu</strong>.
+        </li>
+        <li><code>#00ff00</code> → <code>RGB(0, 255, 0)</code> → <span class="color-sample green"></span>
+            <strong>Verde</strong>.
+        </li>
+        <li><code>#0000ff</code> → <code>RGB(0, 0, 255)</code> → <span class="color-sample blue"></span>
+            <strong>Albastru</strong>.
+        </li>
+    </ul>
+
+    <p>Codul <code>#ffffff</code> reprezintă întotdeauna <strong>alb pur</strong>.</p>
+    <span class="color-sample white"></span>
+
+    <script>
+        console.log(parseInt('ff', 16));
+
+
+    </script>
+
+    <!-- b. -->
+    <h1>Vedem datele in console log.</h1>
+    <script type="text/javascript">
+        window.alert(5 + 6);
+        console.log(5 + 6);
+        console.log(17 + 0b10001 + 0o17 + 0x17);
+        console.log(17 + 17 + 15 + 23);
+
+        console.log(parseInt(10001, 2))
+        console.log(parseInt(17, 8))
+        console.log(parseInt(17, 16))
+    </script>
+    </script>
+
+    <!-- c -->
+    <h1>Cum afișează procesorul un cuvânt, cum ar fi „Home”?</h1>
+
+    <h2> 1.Codificarea datelor</h2>
+    Procesorul lucrează cu coduri binare pentru a reprezenta caractere. <a
+        href="https://www.w3schools.com/charsets/ref_html_ascii.asp " target="_blank">Standardul ASCII</a>, de exemplu,
+    atribuie fiecărui
+    caracter o valoare numerică:
+    <pre>
+    - `H` → 72 (`01001000` în binar)
+    - `o` → 111 (`01101111` în binar)
+    - `m` → 109 (`01101101` în binar)
+    - `e` → 101 (`01100101` în binar)
+    </pre>
+
+    <h2> 2.Stocarea în memorie</h2>
+    Fiecare caracter este stocat ca un șir de biți într-o zonă de memorie.
+
+    <h2>3.Procesarea pentru afișare</h2>
+    Procesorul preia aceste valori binare, le traduce în semnale electrice corespunzătoare și le trimite la o placă
+    grafică sau un alt dispozitiv de ieșire. Aceasta transformă datele într-un semnal vizual care apare pe ecran ca text
+    „Home”.
+
+</body>
+
+</html>
