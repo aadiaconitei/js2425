@@ -1,0 +1,37 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+</head>
+<body>
+    <script>
+// date de intrare
+//  n numarul produse
+//  p pretul pentru fiecare produs in parte
+
+// date de iesire pmin si pmax  
+
+        let n ;
+        let p;
+        let pmin = 300;
+        let pmax = 1;
+        n = window.prompt('Numarul de produse cumarate', 3);
+
+        for( let i = 1; i <=n; i++){
+            p = window.prompt(' Va rugam intoduceti pretul pentru produsul '+i, 1 );
+            document.write('<p> Pretul  este: ' + p + '</p>');
+            if( p <= pmin){
+                pmin = p;
+            }
+            if( p >= pmax){
+                pmax = p;
+            }
+        }
+        document.write('<p> Pretul minim este: ' + pmin + '</p>');
+        document.write('<p> Pretul maxim este: ' + pmax + '</p>');
+
+    </script>
+</body>
+</html>

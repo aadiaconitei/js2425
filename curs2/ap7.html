@@ -1,0 +1,25 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+</head>
+<body>
+   <script>
+
+    let n;
+    let suma =0;
+    n = +window.prompt("va rugam introduceti un numar n", 10); 
+    
+    for(let i = 1; i <= n; i++ ){
+        document.write(i);
+        if(i % 2 == 0){
+            suma = suma + i ;
+        }
+        
+    }
+    document.write ('<p> Suma este: ' + suma + '</p>' )
+   </script> 
+</body>
+</html>
