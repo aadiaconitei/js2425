@@ -1,0 +1,27 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+</head>
+<body>
+    <script>
+        let n;
+        let i = 1;
+
+        n = eval(prompt('Va tugam sa introduceti un numar', 2));
+        document.write(` Numerele mai mici  decat ${n} sunt: `)
+        do{
+            if(i > n){
+                document.write(` Numarul introdus este incorect! `);
+            }
+            else{
+                document.write(` ${n}, `);
+            }
+            
+            n--;
+        }while( i <=n); 
+    </script>
+</body>
+</html>

@@ -1,0 +1,41 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+</head>
+
+<body>
+    <pre>
+        <code>
+            Sa scriem un program care ordoneaza 4 numere.
+            Date de intrare
+            a = 5  b = 7 c = 2 d = 6
+
+            Date de iesire
+            2 5 6 7
+
+        </code>
+    </pre>
+    <script>
+        // Declararea numerelor
+        let a = 5;
+        let b = 7;
+        let c = 2;
+        let d = 6;
+        // Algoritm de interschimbare pentru ordonare crescătoare
+        if (a > b) { let temp = a; a = b; b = temp; }
+        if (b > c) { let temp = b; b = c; c = temp; }
+        if (c > d) { let temp = c; c = d; d = temp; }
+        // După prima trecere, verificăm din nou pentru toate perechile
+        if (a > b) { let temp = a; a = b; b = temp; }
+        if (b > c) { let temp = b; b = c; c = temp; }
+        if (a > b) { let temp = a; a = b; b = temp; }
+        // Rezultatul
+        console.log(`Numerele ordonate sunt: ${a}, ${b}, ${c}, ${d}`);
+    </script>
+</body>
+
+</html>
