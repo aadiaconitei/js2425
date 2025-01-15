@@ -1,0 +1,77 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>100 numere</title>
+    <style>
+        #number-container {
+            display: flex;
+            flex-wrap: wrap;
+            gap: 5px;
+        }
+
+        .number-box {
+            width: 50px;
+            height: 50px;
+            display: flex;
+            align-items: center;
+            justify-content: center;
+            font-size: 14px;
+            font-weight: bold;
+            border: 1px solid #ccc;
+        }
+
+        .even {
+            background-color: rgba(4, 255, 4, 0.506);
+        }
+
+        .odd {
+            background-color: rgba(255, 255, 0, 0.494);
+        }
+
+        .prime {
+            background-color: rgba(53, 4, 248, 0.641);
+            color: white;
+        }
+    </style>
+</head>
+
+<body>
+    <div id="number-container"></div>
+
+    <script>
+        // Functie ce verifica daca un numar este prim = se imparte exact doar la 1 si la el insusi
+        function isPrime(num) {
+            if (num <= 1) return false;
+            for (let i = 2; i <= Math.sqrt(num); i++) {
+                if (num % i === 0) {
+                    return false;
+                }
+            }
+            return true;
+        }
+
+        // generare dinamic div si adaugare in  container 
+        var numberContainer = document.getElementById("number-container");
+
+        for (let i = 0; i <= 101; i++) {
+            var numberBox = document.createElement("div");
+            numberBox.textContent = i;
+            numberBox.classList.add("number-box");
+            if (i % 2 === 0) {
+                numberBox.classList.add("even");
+            } else {
+                numberBox.classList.add("odd");
+            }
+
+            if (isPrime(i)) {
+                numberBox.classList.add("prime");
+            }
+            numberContainer.appendChild(numberBox);
+        }
+    </script>
+</body>
+
+</html>

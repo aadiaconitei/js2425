@@ -1,0 +1,74 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Lista țărilor</title>
+    <script src="./listatari.js"></script>
+    <style>
+        body {
+            font-family: Arial, sans-serif;
+            margin: 20px;
+        }
+
+        #countries-list {
+            list-style: none;
+            padding: 0;
+        }
+
+        .country {
+            margin-bottom: 10px;
+            padding: 10px;
+            border: 1px solid #ccc;
+            border-radius: 5px;
+        }
+    </style>
+</head>
+
+<body>
+    <h1>Lista țărilor</h1>
+    <ul id="countries-list"></ul>
+
+    <script>
+
+
+        // Funcție pentru afișarea țărilor
+        function displayCountries() {
+            var countriesList = document.getElementById("countries-list");
+
+            countriesData.forEach(function (country, index) {
+                var countryItem = document.createElement("li");
+                countryItem.className = "country";
+                let lang = '';
+                country.languages.forEach(function (value, index, array) {
+                    if (index !== array.length - 1) {
+                        lang += value + ', ';
+                    }
+                    else {
+                        lang += value;
+                    }
+                })
+                // Construiește informațiile despre țară
+                var countryInfo = `
+                    <h2>${index + 1} - ${country.name}</h2>
+                    <p><strong>Capitala:</strong> ${country.capital}</p>
+                    <p><strong>Populație:</strong> ${country.population}</p>
+                    <p><strong>Moneda:</strong> ${country.currency}</p>
+                    <p><strong>Limba:</strong> ${lang}</p>
+                    <p><img src= "${country.flag}" style="max-width:100px"></p>
+                `;
+
+                countryItem.innerHTML = countryInfo;
+                countriesList.appendChild(countryItem);
+            });
+        }
+
+        // Afișează țările când pagina este încărcată complet
+        document.addEventListener("DOMContentLoaded", function () {
+            displayCountries();
+        });
+    </script>
+</body>
+
+</html>

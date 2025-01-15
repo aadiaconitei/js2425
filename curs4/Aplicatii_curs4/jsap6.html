@@ -1,0 +1,26 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Document</title>
+</head>
+
+<body>
+  <script>
+    const hexaColor = () => {
+      const str = '0123456789abcdef';
+      let hexa = '#';
+      let index;
+      for (let i = 0; i < 6; i++) {
+        index = Math.floor(Math.random() * str.length);// genereaza numere de la 0 la 15
+        hexa += str[index];
+      }
+      return hexa;
+    }
+    console.log(hexaColor());
+  </script>
+</body>
+
+</html>

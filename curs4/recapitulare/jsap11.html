@@ -1,0 +1,36 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+</head>
+
+<body>
+    <p>scrieți un algoritm care să sorteze crescător/descrescător un array.
+        Ex. <br>
+        Date de intrare: [5, 2, 9, 1, 5, 6];<br>
+        Date de ieșire: [1, 2, 5, 5, 6, 9] <br>
+
+
+    </p>
+    <script>
+        //algoritmul Bubble Sort
+        var myArray = [5, 2, 9, 1, 5, 6, 11, 17, 21];
+        var len = myArray.length;
+        for (var i = 0; i < len - 1; i++) {
+            for (var j = 0; j < len - 1; j++) {
+                if (myArray[j] > myArray[j + 1]) {
+                    // Schimbă elementele dacă sunt în ordine greșită
+                    var temp = myArray[j];
+                    myArray[j] = myArray[j + 1];
+                    myArray[j + 1] = temp;
+                }
+            }
+        }
+        console.log(myArray);
+    </script>
+</body>
+
+</html>

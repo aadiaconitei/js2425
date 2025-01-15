@@ -1,0 +1,37 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+</head>
+
+<body>
+    <script>
+        // metoda 1 - functie arrow
+        const square = (n) => n * n;
+        console.log('metoda 1 ', square(3));
+
+        // metoda 2 - functie default
+        function square2(n) {
+            // return n*n
+            return n ** 2;
+        }
+        console.log('metoda 2 ', square2(3));
+
+        //  metoda 3 - functie anonima
+        let square3 = function (n) {
+            return n * n;
+        }
+        console.log('metoda 3 ', square3(3));
+
+        // metoda 4 - functie anonima care nu se mai poate refolosi 
+        (function (n) {
+            console.log('metoda 4 ', n * n);
+        })(3);
+
+    </script>
+</body>
+
+</html>
