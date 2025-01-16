@@ -11,7 +11,6 @@
             flex-wrap: wrap;
             gap: 5px;
         }
-
         .number-box {
             width: 50px;
             height: 50px;
@@ -20,17 +19,14 @@
             justify-content: center;
             font-size: 14px;
             font-weight: bold;
-            border: 1px solid #ccc;
+            border: 1px solid #cccccc;
         }
-
         .even {
             background-color: rgba(4, 255, 4, 0.506);
         }
-
         .odd {
             background-color: rgba(255, 255, 0, 0.494);
         }
-
         .prime {
             background-color: rgba(53, 4, 248, 0.641);
             color: white;
@@ -45,7 +41,8 @@
         // Functie ce verifica daca un numar este prim = se imparte exact doar la 1 si la el insusi
         function isPrime(num) {
             if (num <= 1) return false;
-            for (let i = 2; i <= Math.sqrt(num); i++) {
+            let numSqrt = Math.sqrt(num);
+            for (let i = 2; i <= numSqrt; i++) {
                 if (num % i === 0) {
                     return false;
                 }
@@ -56,11 +53,11 @@
         // generare dinamic div si adaugare in  container 
         var numberContainer = document.getElementById("number-container");
 
-        for (let i = 0; i <= 101; i++) {
-            var numberBox = document.createElement("div");
+        for (let i = 0; i <=100; i++) {
+            let numberBox = document.createElement("div");
             numberBox.textContent = i;
             numberBox.classList.add("number-box");
-            if (i % 2 === 0) {
+            if (i % 2 == 0) {
                 numberBox.classList.add("even");
             } else {
                 numberBox.classList.add("odd");

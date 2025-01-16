@@ -5,11 +5,20 @@
   <meta charset="UTF-8">
   <meta name="viewport" content="width=device-width, initial-scale=1.0">
   <title>Document</title>
+  <style>
+    #demo {
+      width: 500px;
+      height: 500px;
+      margin: 30px auto;
+    }
+  </style>
 </head>
 
 <body>
+    <div id="demo"></div>
   <script>
-    const hexaColor = () => {
+    // const hexaColor = () => {
+    function hexaColor(){
       const str = '0123456789abcdef';
       let hexa = '#';
       let index;
@@ -19,6 +28,9 @@
       }
       return hexa;
     }
+    let myDiv = document.getElementById('demo');
+    let myColor = hexaColor();
+    myDiv.style.backgroundColor = myColor;
     console.log(hexaColor());
   </script>
 </body>
