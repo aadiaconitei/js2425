@@ -15,11 +15,17 @@
     <script>
         function asciiToChar(code) {
             let text = String.fromCharCode(code);
-
-            document.getElementById("demo").append = code + ' -> ' + text;
+            // document.getElementById("demo").innerHTML = code + ' -> ' + text;
+            document.getElementById("demo").append(code + ' -> ' + text );
 
         }
-        asciiToChar(65);
+        // asciiToChar(65);
+        // asciiToChar(97);
+        for(let i = 0; i<127; i++){
+            asciiToChar(i);
+            
+
+        }
 
     </script>
 </body>

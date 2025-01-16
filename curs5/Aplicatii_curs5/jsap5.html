@@ -16,15 +16,16 @@
                 document.write("<tr>");
                 for (let c = 1; c <= nrcoloane; c++) {
                     let culoare = ((l + c) % 2 ? alb : negru);
-                    document.write(`<td bgcolor=${culoare} width=30 height=30></td>`);
+                    // document.write(`<td bgcolor=${culoare} width=30 height=30></td>`);
+                    document.write(`<td style="background-color:${culoare}; width:30px;height:30px"> ${l} ${c} </td>`);
                 }
                 document.write("</tr>");
             }
             document.write("</table>");
         }
         sah();
-        sah(4, 4, 'magenta', 'green');
-        sah(15, 15, 'magenta', 'yellow');
+        // sah(4, 4, 'magenta', 'green');
+        // sah(15, 10, 'magenta', 'yellow');
     </script>
 </body>
 
