@@ -1,0 +1,52 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+</head>
+<body>
+    <script>
+        // const persoana = {
+        //     nume: 'Popescu',
+        //     prenume: 'Dan',
+        //     ani: 25
+        // }
+        // const persoana2 ={
+        //     nume: 'Popescu',
+        //     prenume: 'Dan',
+        //     ani: 25
+        // }
+        // persoana2.prenume= 'Ion';
+        // console.log(persoana.prenume);
+        // console.log(persoana.prenume);
+
+
+        function produsNou(nume, pret, stoc, dataFabricarii) {
+            const obj = {};
+            obj.nume = nume;
+            obj.pret = pret;
+            obj.stoc = stoc;
+            obj.dataFabricari = dataFabricarii;
+            obj.afiseaza = function () {
+                console.log(`Produsul ${obj.nume} costa ${obj.pret}`)
+                console.log(`Produsul ${this.nume} costa ${this.pret}`)
+            },
+            obj.cumpara = function () {
+                if (this.stoc > 0) {
+                    this.stoc -= 1; //this.stoc = this.stoc - 1
+                    console.log(`Produsul ${this.nume} a fost adaugat in cos`)
+                }
+            }
+            return obj;
+        }
+        const paine = produsNou('Paine', 8, 36, '2020-02-22');
+        paine.afiseaza();
+        paine.cumpara();
+        console.log(paine.nume);
+        const produs2 = produsNou('Apa mineral Borsec', 3.5, 100, '2025-01-01');
+        produs2.afiseaza();
+        
+    </script>
+</body>
+</html>

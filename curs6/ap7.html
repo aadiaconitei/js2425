@@ -1,0 +1,48 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+</head>
+<body>
+    <script>
+
+function produsNou(nume, pret, stoc, dataFabricarii) {
+            this.nume = nume;
+            this.pret = pret;
+            this.stoc = stoc;
+            this.dataFabricari = dataFabricarii;
+            this.afiseaza = function () {
+                console.log(`Produsul ${this.nume} are pretul de ${this.pret} lei`)
+            },
+                this.cumpara = function () {
+                    if (this.stoc > 0) {
+                        this.stoc -= 1;
+                        console.log(`Produsul ${this.nume} a fost 
+                        adaugat in cos`)
+                        console.log('Produsul '+this.nume+' a fost ' +
+                        'adaugat in cos')
+                    }
+                }
+        }
+        const paine = new produsNou('Paine', 8, 36, '2020-02-22');
+        // paine.afiseaza();
+        // paine.cumpara();
+
+        const paineNeagra = Object.assign(paine);
+        console.log(paineNeagra);
+        paineNeagra.nume = 'Paine neagra';
+        paineNeagra.afiseaza();
+
+        // Prototype
+        const paineCuSeminte = Object.create(paine);
+        console.log(paineCuSeminte);
+        // paineCuSeminte.nume = 'Paine cu seminte';
+        paineCuSeminte.nume = 'Paine cu seminte';
+        console.log(paineCuSeminte);
+        paineCuSeminte.afiseaza();
+        
+    </script>
+</body>
+</html>

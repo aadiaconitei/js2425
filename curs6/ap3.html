@@ -1,0 +1,52 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>Document</title>
+  </head>
+  <body>
+    <script>
+      function produsNou(n, p, s, dataFabricarii, reducere) {
+        this.nume = n;
+        this.pret = p;
+        this.stoc = s;
+        this.reducere = reducere;
+        this.dataFabricari = dataFabricarii;
+        (this.afiseaza = function () {
+          console.log(`Produsul ${this.nume} are pretul de ${this.pret} lei`);
+        }),
+          (this.calculeazaPret = function () {
+            if (this.reducere) {
+              this.pret = this.pret - (this.pret * this.reducere) / 100;
+            }
+            console.log(`Produsul ${this.nume} are pretul de ${this.pret} lei`);
+          }),
+          (this.cumpara = function () {
+            if (this.stoc > 0) {
+              this.stoc -= 1;
+              console.log(`Produsul ${this.nume} a fost 
+                        adaugat in cos`);
+              console.log(
+                "Produsul " + this.nume + " a fost " + "adaugat in cos"
+              );
+            }
+          });
+      }
+      const paine = new produsNou("Paine", 8, 36, "2020-02-22", 0);
+
+      paine.afiseaza();
+      paine.calculeazaPret();
+      paine.afiseaza();
+      //paine.cumpara();
+      const apa = new produsNou("Apa minerala", 3.5, 120, "2025-01-01", 20);
+      apa.calculeazaPret();
+      apa.afiseaza();
+
+      //   const paineNeagra = Object.assign(paine);
+      //   paineNeagra.afiseaza();
+      //   paineNeagra.nume = "Paine neagra cu seminte";
+      //   console.log(paineNeagra);
+    </script>
+  </body>
+</html>
