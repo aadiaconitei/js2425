@@ -1,0 +1,37 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>Document</title>
+
+    <script src="./Aplicatii_curs6/solutii/data.js"></script>
+    <script>
+      console.log(data);
+      //   data.forEach((element, index) => {
+      //     document.write(`<p> Titlu este: ${element.title} </p>`);
+      //   });
+      data.forEach(function (element, index) {
+        document.write(
+          `<h1> Elementul  cu indexul ${index} are ID: ${element.id} </h1>`
+        );
+        document.write(`<p> Titlu este: ${element.title} </p>`);
+        document.write(`<p> Durata este: ${element.duration} </p>`);
+        document.write(`<p> Tagurile sunt: </p>`);
+        document.write(`<ul>`);
+        element.tags.forEach(function (val) {
+          document.write(`<li> ${val}</li>`);
+        });
+        document.write(`</ul>`);
+
+        document.write(`<p> Gazdele sunt: </p>`);
+        document.write(`<ul>`);
+        element.hosts.forEach(function (val) {
+          document.write(`<li> ${val}</li>`);
+        });
+        document.write(`</ul>`);
+      });
+    </script>
+  </head>
+  <body></body>
+</html>

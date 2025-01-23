@@ -1,0 +1,25 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>Document</title>
+  </head>
+  <body>
+    <script>
+      const myArr = [
+        [2, 6, 3, 9, 10, 5, 3, 16, 12, 4],
+        [5, 9, 2, 6, 12, 43, 23, 1],
+        [7, 3, 9, 15, 17, 11, 21, 0],
+      ];
+      console.log(myArr);
+      console.log(myArr[1][5]);
+      //   myArr.sort((a,b)=> a - b);
+      myArr.forEach(function (arr) {
+        arr.sort((a, b) => a - b);
+      });
+      console.log(myArr[1][5]);
+      console.log(myArr);
+    </script>
+  </body>
+</html>

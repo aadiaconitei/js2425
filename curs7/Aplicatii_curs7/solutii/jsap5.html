@@ -1,0 +1,48 @@
+<!DOCTYPE html>
+<html>
+  <body>
+    <h1>Caesar Cipher Encoder</h1>
+    <b>Enter the text to convert:</b>
+
+    <script language="JavaScript">
+      function Caesar() {
+        let f = document.getElementById("key").value;
+        let x = document.getElementById("myTextArea").value;
+        let key1 = Number(f);
+        console.log(key1);
+        let result = "";
+        for (let i = 0, len = x.length; i < len; i++) {
+          if (x[i] == " ") {
+            result = result + " ";
+            continue;
+          }
+          if (x[i] == x[i].toUpperCase()) {
+            let myChar = x[i].charCodeAt(0);
+            let e = ((myChar - 65 + key1) % 26) + 97;
+            result = result + String.fromCharCode(e).toUpperCase();
+          } else if (x[i] == x[i].toLowerCase()) {
+            let myChar = x[i].charCodeAt(0);
+            let e = ((myChar - 97 + key1) % 26) + 97;
+            result = result + String.fromCharCode(e);
+          } else {
+            result = result + x[i];
+          }
+        }
+        document.getElementById("result").value = result;
+      }
+    </script>
+
+    <div class="input">
+      <textarea id="myTextArea" rows="6" cols="80"></textarea>
+    </div>
+    <div class="user">
+      <br /><label><b>Key</b></label>
+      <input type="number" id="key" value="text here" />
+      <button onclick="Caesar()">Convert</button>
+    </div>
+    <br />
+    <div class="resulta">
+      <textarea id="result" rows="6" cols="80"></textarea>
+    </div>
+  </body>
+</html>

@@ -1,0 +1,60 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+</head>
+
+<body>
+    <h1>Diferenta dintre evenimente manipulate/ tratate cu onclick si addEventListener</h1>
+    <h2>Metoda 1: atribut HTML onclick</h2>
+    <button id="btn1" onclick="myFunction()">Primul buton</button>
+    <p id="myp1">Apasa pe primul buton.</p>
+
+    <script>
+        function myFunction() {
+            let myDemo = document.getElementById("myp1");
+            myDemo.innerHTML = "Ai apasat pe buton!";
+        }
+    </script>
+
+    <h2>Metoda 2: atribut HTML onclick</h2>
+    <button id="btn2">Al 2-lea buton</button>
+    <p id="myp2">Apasa pe al 2-lea buton.</p>
+    <p id="myp3">Apasa pe al 2-lea buton.</p>
+    <script>
+        let btn_element = document.getElementById("btn2");
+
+        btn_element.onclick = () => {
+            let myp2 = document.getElementById("myp2");
+            myp2.innerHTML = "Daca s-a apasat pe buton se schimba continutul doar la ultimul p";
+        };
+
+        btn_element.onclick = () => {
+            let myp3 = document.getElementById("myp3");
+            // nu se pot ataza mai multe evenimente
+            myp3.innerHTML = "Daca s-a apasat pe buton se schimba continutul doar la ultimul p";
+        };
+    </script>
+    <h2>Metoda 3: addEventListener</h2>
+    <button id="btn3">Al 3-lea buton</button>
+    <p id="myp4">Apasa pe al 3-lea buton.</p>
+    <p id="myp5">Apasa pe al 3-lea buton.</p>
+    <script>
+        let btn3_element = document.getElementById("btn3");
+
+        btn3_element.addEventListener("click", () => {
+            let myp4 = document.getElementById("myp4");
+            myp4.innerHTML = "Daca s-a apasat pe buton se schimba continutul si la paragraful 4 si 5";
+        })
+
+        btn3_element.addEventListener("click", () => {
+            let myp5 = document.getElementById("myp5");
+            myp5.innerHTML = "Daca s-a apasat pe buton se schimba continutul si la paragraful 4 si 5";
+        });
+    </script>
+</body>
+
+</html>

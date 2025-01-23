@@ -30,6 +30,7 @@ const data = [
         paid: true
     },
     {
+        id: 4,
         title: "Crime Crime Crime", 
         duration: 70, 
         tags: ["crime", "entertainment", "mature"], 
@@ -39,6 +40,7 @@ const data = [
         paid: true
     },
     {
+        id: 5,
         title: "Something about Witches", 
         duration: 35, 
         tags: ["fantasy", "entertainment"], 
@@ -48,6 +50,7 @@ const data = [
         paid: false
     },
     {
+        id: 6,
         title: "Coding Corner", 
         duration: 55, 
         tags: ["education", "jobs", "technology"], 
