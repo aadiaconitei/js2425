@@ -1,0 +1,63 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>Meniu Restaurant</title>
+    <!-- font-awesome -->
+    <link
+      rel="stylesheet"
+      href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/5.14.0/css/all.min.css"
+    />
+    <!-- styles -->
+    <link rel="stylesheet" href="./css/style.css" />
+  </head>
+  <body>
+    <section class="menu">
+      <!-- title -->
+      <div class="title">
+        <h2>Meniu</h2>
+        <div class="underline"></div>
+      </div>
+       <!-- filter buttons -->
+       <div class="btn-container">
+        <button type="button" class="filter-btn" data-id="all" data-nr="btn1">Tot</button>
+        <button type="button" class="filter-btn" data-id="breakfast" data-nr="btn2"> Mic Dejun</button>
+        <button type="button" class="filter-btn" data-id="lunch" data-nr="btn3">Pranz</button>
+        <button type="button" class="filter-btn" data-id="dinner" data-nr="btn4"> Cina</button> 
+        <button type="button" class="filter-btn" data-id="shakes" data-nr="btn5"> Bauturi</button> 
+      </div>
+      <!-- counter -->
+      <div class="btn-counter btn-container">
+        <span class="btn" id ="btn1">0</span>
+        <span class="btn" id ="btn2">0</span>
+        <span class="btn" id ="btn3">0</span>
+        <span class="btn" id ="btn4">0</span> 
+        <span class="btn" id ="btn5">0</span> 
+      </div>
+      <!-- menu items -->
+      <div class="section-center">
+        <!-- single item -->
+        <article class="menu-item">
+          <img src="./img/item-10.jpeg" alt="menu item" class="photo" />
+          <div class="item-info">
+            <header>
+              <h4>buttermilk pancakes</h4>
+              <h4 class="price">15 RON</h4>
+            </header>
+            <p class="item-text">
+              Lorem ipsum dolor sit amet consectetur adipisicing elit.
+              Repudiandae, sint quam. Et reprehenderit fugiat nesciunt inventore
+              laboriosam excepturi! Quo, officia.
+            </p>
+          </div>
+        </article>
+        <!-- end of single item -->
+       
+      </div>
+    </section>
+    <!-- javascript -->
+    <script src="./js/data.js"></script>
+    <script src="./js/app.js"></script>
+  </body>
+</html>
