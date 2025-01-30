@@ -27,13 +27,14 @@ function diplayMenuItems(menuItems) {
     let displayMenu = [];
     menuItems.forEach(function (item) {
         let articol = `<article class="menu-item">
-        <img src=${item.img} alt=${item.title} class="photo" />
+        <img src=${item.img} alt=${item.title} title=${item.title} class="photo" />
         <div class="item-info">
             <header>
                 <h4>${item.title}</h4>
                 <h4 class="price">${item.price} RON</h4>
             </header>
             <p class="item-text"> ${item.desc}</p>
+            <p><button class="button" onClick=addToCart(${item.price})>Adauga in cos</botton></p>
         </div>
         </article>`;
         displayMenu.push(articol);
@@ -47,7 +48,7 @@ function diplayMenuItems(menuItems) {
 }
 function displayMenuButtons() {
 
-    const categories = menu.reduce(
+    const categories = menu12.reduce(
         function (values, item) {
             if (!values.includes(item.category)) {
                 values.push(item.category);
@@ -59,7 +60,7 @@ function displayMenuButtons() {
     const categoryBtns = categories.map(function (category, index) {
         let btn_nr = 'btn' + (index + 1);
         const categoryRo = {
-            all: 'Tot',
+            all: 'Totaaaa',
             breakfast: 'Mic Dejun',
             lunch: 'Pranz',
             dinner: 'Cina',
@@ -80,14 +81,14 @@ function displayMenuButtons() {
             counterClick(e.currentTarget);
 
             const category = e.currentTarget.dataset.id;
-            const menuCategory = menu.filter(function (menuItem) {
+            const menuCategory = menu12.filter(function (menuItem) {
                 // console.log(menuItem.category);
                 if (menuItem.category === category) {
                     return menuItem;
                 }
             });
             if (category === "all") {
-                diplayMenuItems(menu);
+                diplayMenuItems(menu12);
             } else {
                 diplayMenuItems(menuCategory);
             }
@@ -96,14 +97,23 @@ function displayMenuButtons() {
 }
 
 
+
+
 function counterClick(btn) {
     const bntCurrent = document.getElementById(btn.dataset.nr);
     let contNumber = Number(bntCurrent.textContent)
     bntCurrent.textContent = contNumber + 1;
 }
 
+function addToCart(price){
+    let myCart = document.getElementById('cos');
+    let valoare_initiala = +(myCart.innerText || myCart.textContent);
+    myCart.innerHTML = valoare_initiala + price;
+    // alert(price);
+}
+
 // display all items when page loads
 window.addEventListener("DOMContentLoaded", function () {
-    diplayMenuItems(menu);
+    diplayMenuItems(menu12);
     displayMenuButtons();
 });

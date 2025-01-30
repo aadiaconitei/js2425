@@ -2,9 +2,12 @@
 var  nrProduse=0;
 function addProduct() {
     let product = document.getElementById('product').value;
-    if (!product)
+    if (!product){
         return;
-    const text = "<li class='product'>" + product + " <span id='"+nrProduse+ "'>Sterge</span></li>"
+    }
+       
+    // const text = "<li class='product'>" + product + " <span id='"+nrProduse+ "'>Sterge</span></li>"
+    const text = `<li class='product'>${product} <span id='${nrProduse}'>Sterge</span></li>`
     document.getElementById('list').insertAdjacentHTML('beforeend', text)
     document.getElementById('product').value = '';
     nrProduse  =nrProduse + 1;
@@ -46,10 +49,11 @@ document.getElementById('list').addEventListener('dblclick', function(event){
     const element = event.target;
     let storageKey = Number(element.id) + 1;
     alert(nrProduse);
-    nrProduse  = nrProduse - 1;
+    // nrProduse  = nrProduse - 1;
+    nrProduse -=1;
 
     localStorage.removeItem(storageKey)
-    // localStorage.setItem('numarProduse', nrProduse);
+    localStorage.setItem('numarProduse', nrProduse);
 
    
     // face un reload pentru pagina

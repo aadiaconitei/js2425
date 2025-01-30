@@ -7,7 +7,10 @@
     <!-- font-awesome -->
     <link
       rel="stylesheet"
-      href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/5.14.0/css/all.min.css"
+      href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.7.2/css/all.min.css"
+      integrity="sha512-Evv84Mr4kqVGRNSgIGL/F/aIDqQb7xQ2vcrdIwxfjThSH8CSR7PBEakCr51Ck+w+/U6swU2Im1vVX0SVk9ABhg=="
+      crossorigin="anonymous"
+      referrerpolicy="no-referrer"
     />
     <!-- styles -->
     <link rel="stylesheet" href="./css/style.css" />
@@ -18,27 +21,53 @@
       <div class="title">
         <h2>Meniu</h2>
         <div class="underline"></div>
+        <h2><i class="fas fa-cart-plus"></i>: <span id="cos"> 0 </span></h2>
       </div>
       <!-- filter buttons -->
       <div class="btn-container">
-        <button type="button" class="filter-btn" data-id="all" data-nr="btn1">Tot</button>
-        <button type="button" class="filter-btn" data-id="breakfast" data-nr="btn2"> Mic Dejun</button>
-        <button type="button" class="filter-btn" data-id="lunch" data-nr="btn3">Pranz</button>
-        <button type="button" class="filter-btn" data-id="dinner" data-nr="btn4"> Cina</button> 
-        <button type="button" class="filter-btn" data-id="shakes" data-nr="btn5"> Bauturi</button> 
+        <button type="button" class="filter-btn" data-id="all" data-nr="btn1">
+          Tot
+        </button>
+        <button
+          type="button"
+          class="filter-btn"
+          data-id="breakfast"
+          data-nr="btn2"
+        >
+          Mic Dejun
+        </button>
+        <button type="button" class="filter-btn" data-id="lunch" data-nr="btn3">
+          Pranz
+        </button>
+        <button
+          type="button"
+          class="filter-btn"
+          data-id="dinner"
+          data-nr="btn4"
+        >
+          Cina
+        </button>
+        <button
+          type="button"
+          class="filter-btn"
+          data-id="shakes"
+          data-nr="btn5"
+        >
+          Bauturi
+        </button>
       </div>
       <!-- counter -->
       <div class="btn-counter btn-container">
-        <span class="btn" id ="btn1">0</span>
-        <span class="btn" id ="btn2">0</span>
-        <span class="btn" id ="btn3">0</span>
-        <span class="btn" id ="btn4">0</span> 
-        <span class="btn" id ="btn5">0</span> 
+        <span class="btn" id="btn1">0</span>
+        <span class="btn" id="btn2">0</span>
+        <span class="btn" id="btn3">0</span>
+        <span class="btn" id="btn4">0</span>
+        <span class="btn" id="btn5">0</span>
       </div>
       <!-- menu items -->
       <div class="section-center">
         <!-- single item -->
-        <article class="menu-item">
+        <!-- <article class="menu-item">
           <img src="./img/item-10.jpeg" alt="menu item" class="photo" />
           <div class="item-info">
             <header>
@@ -51,9 +80,8 @@
               laboriosam excepturi! Quo, officia.
             </p>
           </div>
-        </article>
+        </article> -->
         <!-- end of single item -->
-       
       </div>
     </section>
     <!-- javascript -->

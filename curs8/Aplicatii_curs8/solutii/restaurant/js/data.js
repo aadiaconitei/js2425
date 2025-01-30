@@ -1,4 +1,4 @@
-const menu = [
+const menu12 = [
   {
     id: 1,
     title: "buttermilk pancakes",
@@ -78,5 +78,13 @@ const menu = [
     price: 22.99,
     img: "./img/item-10.jpeg",
     desc: `skateboard fam synth authentic semiotics. Live-edge lyft af, edison bulb yuccie crucifix microdosing.`,
+  },
+  {
+    id: 11,
+    title: "Ciorba",
+    category: "dinner",
+    price: 35,
+    img: "./img/item-8.jpeg",
+    desc: `Ciorba de legume`,
   }
 ];

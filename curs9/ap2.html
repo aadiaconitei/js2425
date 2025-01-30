@@ -1,0 +1,32 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>Document</title>
+  </head>
+  <body>
+    <h1>Formular de abonare</h1>
+
+    <div>
+      <label for="email"> Adresda de eamil</label>
+      <input type="email" name="email" id="email" />
+    </div>
+    <div>
+      <input type="submit" value="Aboneaza-te" onclick="afiseazaEmail()" />
+    </div>
+
+    <div>
+      <h3>Afiseaza email</h3>
+      <p id="afiseaza"></p>
+    </div>
+
+    <script>
+      function afiseazaEmail() {
+        let email = document.getElementById("email").value;
+        let afis = document.getElementById("afiseaza");
+        afis.innerHTML = email;
+      }
+    </script>
+  </body>
+</html>

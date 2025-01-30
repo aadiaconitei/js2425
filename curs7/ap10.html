@@ -1,0 +1,37 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>Document</title>
+  </head>
+  <body>
+    <form name="myForm" action="" novalidate>
+      <div>
+        <label>Email</label>
+        <input type="email" name="email" id="email" required />
+      </div>
+      <div>
+        <input
+          type="submit"
+          value="Trimite"
+          onclick="ValidateEmail(document.myForm.email)"
+        />
+      </div>
+    </form>
+    <script>
+      function ValidateEmail(inputText) {
+        var mailformat = /^\w+([\.-]?\w+)*@\w+([\.-]?\w+)*(\.\w{2,3})+$/;
+        if (inputText.value.match(mailformat)) {
+          alert("Valid email address!");
+          document.myForm.email.focus();
+          return true;
+        } else {
+          alert("You have entered an invalid email address!");
+          document.myForm.email.focus();
+          return false;
+        }
+      }
+    </script>
+  </body>
+</html>
