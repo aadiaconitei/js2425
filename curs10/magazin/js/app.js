@@ -59,6 +59,7 @@ const start = function() {
   const data = fetchProducts();
   // salvez in localStorage
   setupStore(data);
+  
   displayProducts(data);
 };
 
