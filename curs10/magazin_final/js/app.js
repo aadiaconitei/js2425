@@ -1,12 +1,15 @@
 
 const productsDOM = document.querySelector('.products-container');
+const searchForm = document.querySelector('.input-form');
+const searchInput = document.querySelector('.search-input');
+const categoryButtons = document.querySelectorAll('.company-btn');
 
-const fetchProducts = function() {
+const fetchProducts = function () {
   productsDOM.innerHTML = '<div class="loading"></div>';
   try {
     // productsJsonList sunt produsele din data.js
-     console.log(productsJsonList);
-    //const data = productsJsonList;
+    // console.log(productsJsonList);
+    const data = productsJsonList;
     return data;
   } catch (error) {
     productsDOM.innerHTML = '<p class="error">there was an error</p>';
@@ -18,16 +21,16 @@ const fetchProducts = function() {
 const displayProducts = (list) => {
   const productList = list
     .map((product) => {
-      const  id  = product.id;
+      const id = product.id;
       const company = product.fields.company;
       const title = product.fields.name;
       const price = product.fields.price;
-      const img= product.fields.image[0].url;
+      const img = product.fields.image[0].url;
       // sau in forma compacta: ES6 destructuring assignment
       // const { id } = product;
       // const { name: title,company, price } = product.fields;
       // const { url: img } = product.fields.image[0];
-      
+
       return `<article class="product">
       <div class="product-container">
         <img src="${img}" class="product-img img" alt="${title}">
@@ -53,8 +56,46 @@ const displayProducts = (list) => {
   productsDOM.innerHTML = productList;
 };
 
+// functia de cautare
+function searchProducts(term) {
+  if (!term.trim() || term.trim().length <= 2) {
+    displayProducts(productsJsonList);
+    return;
+  }
+  const filteredProducts = productsJsonList.filter((product) => {
+    return product.fields.name.toLowerCase().includes(term.toLowerCase());
+  });
+  displayProducts(filteredProducts);
+};
+// eveniment de ascultare pentru submit-ul formularului de căutare
+searchForm.addEventListener('submit', (e) => {
+  e.preventDefault();
+  const searchTerm = searchInput.value;
 
-const start = function() {
+  searchProducts(searchTerm);
+});
+
+
+// funcția de filtrare după categorie
+function filterByCategory(category) {
+  if (category === 'all') {
+    displayProducts(productsJsonList);
+    return;
+  }
+  const filteredProducts = productsJsonList.filter((product) => {
+    return product.fields.company.toLowerCase() === category.toLowerCase();
+  });
+  displayProducts(filteredProducts);
+}
+// eveniment de ascultare pentru butoanele de categorie
+categoryButtons.forEach((button) => {
+  button.addEventListener('click', (e) => {
+    const category = e.currentTarget.dataset.category;
+    filterByCategory(category);
+  });
+});
+
+const start = function () {
   console.log('start');
   const data = fetchProducts();
   // salvez in localStorage
@@ -63,3 +104,8 @@ const start = function() {
 };
 
 start();
+
+
+
+
+

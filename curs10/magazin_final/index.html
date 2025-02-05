@@ -1,0 +1,116 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+  <meta charset="UTF-8" />
+  <meta http-equiv="X-UA-Compatible" content="IE=edge" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+  <title>Products</title>
+  <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/5.14.0/css/all.min.css" />
+  <link rel="stylesheet" href="./css/styles.css" />
+</head>
+
+<body>
+  <nav class="navbar page">
+    <div class="nav-center">
+      <!-- links -->
+      <div>
+        <button class="toggle-nav">
+          <i class="fas fa-bars"></i>
+        </button>
+        <ul class="nav-links">
+          <li>
+            <a href="index.html" class="nav-link">
+              home
+            </a>
+          </li>
+        </ul>
+      </div>
+      <!-- logo -->
+      <img src="./img/logo.png" style="width:10%" class="nav-logo" alt="logo">
+      <!-- cart icon -->
+      <div class="toggle-container">
+        <button class="toggle-cart">
+          <i class="fas fa-shopping-cart"></i>
+        </button>
+        <span class="cart-item-count">2</span>
+      </div>
+    </div>
+  </nav>
+  <!-- cart -->
+  <div class="cart-overlay">
+    <aside class="cart">
+      <button class="cart-close">
+        <i class="fas fa-times"></i>
+      </button>
+      <header>
+        <h3 class="text-slanted">your bag</h3>
+      </header>
+      <!-- cart items -->
+      <div class="cart-items"></div>
+      <!-- footer -->
+      <footer>
+        <h3 class="cart-total text-slanted">
+          total : $12.99
+        </h3>
+        <button class="cart-checkout btn">checkout</button>
+      </footer>
+    </aside>
+  </div>
+  <section class="products">
+    <!-- filters -->
+    <div class="filters">
+      <div class="filters-container">
+        <!-- search -->
+        <form class="input-form">
+          <input type="text" name="search" class="search-input" placeholder="search...">
+          <button type="submit" class="search-btn">
+            <i class="fas fa-search"></i>
+          </button>
+        </form>
+        <!-- categories -->
+        <h4>Company</h4>
+        <article class="companies">
+          <button class="company-btn" data-category="all">all</button>
+          <button class="company-btn" data-category="ikea">ikea</button>
+          <button class="company-btn" data-category="marcos">marcos</button>
+          <button class="company-btn" data-category="caressa">caressa</button>
+          <button class="company-btn" data-category="liddy">liddy</button>
+        </article>
+        <!-- price -->
+        <h4>Price</h4>
+        <div class="range">
+          <div class="range-slider">
+            <span class="range-selected"></span>
+          </div>
+          <div class="range-input">
+            <input type="range" class="min" min="0" max="8000" value="0" step="100">
+            <input type="range" class="max" min="0" max="8000" value="8000" step="100">
+          </div>
+          <div class="range-price">
+            <label for="min">Min</label>
+            <input type="number" name="min" value="0">
+            <label for="max">Max</label>
+            <input type="number" name="max" value="8000">
+          </div>
+        </div>
+        <!-- https://github.com/w3collective/price-range-slider -->
+        <!-- https://github.com/codzsword/price-range-slider/tree/main -->
+
+      </div>
+    </div>
+    <!-- products -->
+    <div class="products-container"></div>
+  </section>
+  <script src="./js/data.js"></script>
+  <script src="./js/store.js"></script>
+
+  <script src="./js/cart/toggleCart.js"></script>
+  <script src="./js/cart/addToCartDOM.js"></script>
+  <script src="./js/cart/setupCart.js"></script>
+
+  <script src="./js/app.js"></script>
+  <script src="./js/price_range.js"></script>
+</body>
+
+</html>

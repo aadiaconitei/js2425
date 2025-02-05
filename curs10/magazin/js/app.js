@@ -6,7 +6,7 @@ const fetchProducts = function() {
   try {
     // productsJsonList sunt produsele din data.js
      console.log(productsJsonList);
-    //const data = productsJsonList;
+    const data = productsJsonList;
     return data;
   } catch (error) {
     productsDOM.innerHTML = '<p class="error">there was an error</p>';
