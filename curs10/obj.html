@@ -1,0 +1,97 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+</head>
+
+<body>
+    <p id="demo"></p>
+    <script>
+        //1. definire obiect
+        "use strict";
+        function User(name) {
+            this.name = name;
+            this.isAdmin = false;
+            this.sayHi = function () {
+                console.log("My name is: " + this.name);
+            };
+        }
+        let user = new User("Jack");
+
+        alert(user.name); // Jack
+        alert(user.isAdmin); // false
+        john.sayHi();
+
+
+        //2. Sa se calculeze salariu?
+        let salaries = {
+            John: 100,
+            Ann: 160,
+            Pete: 130
+        };
+        let sum = 0;
+        for (let key in salaries) {
+            sum += salaries[key];
+        }
+        alert(sum); // 390
+
+        // //3. ce afiseaza urmatorul cod?
+        // let ladder = {
+        //   step: 0,
+        //   up() {
+        //     this.step++;
+        //     return this;
+        //   },
+        //   down() {
+        //     this.step--;
+        //     return this;
+        //   },
+        //   showStep() {
+        //     alert( this.step );
+        //     return this;
+        //   }
+        // };
+        // ladder.up().up().down().showStep().down().showStep(); // arată 1 apoi 0
+
+        // //4. ce afiseaza urmatorul cod?
+        // const person = {
+        //     firstName: "Ion",
+        //     lastName: "Popescu",
+        //     fullInfo: function (telefon , email) {
+        //         return this.firstName + " " + this.lastName + " " +telefon + " "+email ;
+        //     }
+        // }
+        // const person1 = {
+        //     firstName: "Dan",
+        //     lastName: "Ionescu"
+        // }
+
+        // // call(), apply() pot apela metode de la alte obiecte
+        // let myName = person.fullInfo();
+        // console.log(myName);
+        // let yourName = person.fullInfo.call(person1,'0712345678','dan@dan.com');
+        // // let yourName = person.fullName.apply(person1,['0712345678','dan@dan.com']);
+        // console.log(yourName);
+
+        // //5. ce afiseaza urmatorul cod?
+        // const person3 = {
+        //     firstName: "Ion",
+        //     lastName: "Popescu",
+        //     fullInfo: function () {
+        //         let x = document.getElementById("demo");
+        //  		x.innerHTML = this.firstName + " " + this.lastName ;
+        //     }
+        // }
+        // //console.log(person3.fullInfo());
+        // //setTimeout(person3.fullInfo, 3000);
+        // setTimeout(person3.fullInfo.bind(person3), 3000);
+        
+        
+    </script>
+</body>
+
+</html>

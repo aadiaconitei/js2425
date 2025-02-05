@@ -1,0 +1,116 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+</head>
+
+<body>
+    <script>
+        //  Ce se afiseaza pentru fiecare caz in parte?
+
+        //1.  sintaxa clasica defineirea functii
+        function hello() {
+            console.log("Salut");
+        }
+
+        function addNumbers(a, b) {
+            return a + b;
+        }
+        console.log(addNumbers(1, 2));
+
+        //2.  variabila de tip functie: function lambda expressions
+        let multiplyNumbers = function (a, b) {
+            return a * b;
+        }
+        console.log(multiplyByTwo(2, 3));
+
+        //3. fuctii ce se apeleaza automat: - Self-Invoking
+        (function (a, b) {
+            console.log(a * b);
+        })(4, 5);
+
+        //4.  arrow 
+        const addNumbers = (a, b) => a + b;
+        console.log(addNumbers(3, 2));
+
+        //5.  callback 
+        function multiplyByTwo(n, callback) {
+            var result = n * 2;
+            callback(result);
+        }
+        function logResult(result) {
+            console.log(result);
+        }
+        multiplyByTwo(5, logResult);
+
+        //6. cu parametrii defalut 
+        function greet(name = "Ion") {
+            console.log(`Salut, ${name}!`);
+        }
+        greet(); // Salut, Ion!
+        greet("Dan"); // Salut, Dan!
+
+        //7.  constructor
+        function Person(name, age) {
+            this.name = name;
+            this.age = age;
+        }
+        let person = new Person("John Smith", 30);
+        console.log(person.name); // Output: "John Smith"
+        console.log(person.age);
+
+
+        //8.  o functie definita in interiorul altei functii: Nested
+        function addCount() {
+            let count = 0;
+            function plus() {
+                // accesez variabila definita in functia parinte
+                count++;
+            }
+            plus();
+            return count;
+        }
+
+        console.log(addCount());
+        console.log(addCount());
+
+        //9.  o functie returneaza executia altei functii: Closures
+        //  Closures este o funcție care are acces la variabilele din domeniul său părinte,
+        //  chiar și după ce funcția părinte a facut return
+        function createCounter() {
+            let count = 0; // aceasta linie se executa o singura data
+            return function () {
+                // accesez variabila definita in functia parinte
+                return count++;
+            }
+        }
+        const myCounter = createCounter();
+        console.log(myCounter());
+        console.log(myCounter());
+
+        //10. functie parsata ca parametru: Higher-Order
+        function performOperation(a, b, operation) {
+            return operation(a, b);
+        }
+        let result = performOperation(5, 10, addNumbers);
+        console.log(result);
+
+        //11. Hoisting
+   
+        printName("Ion");     
+        function printName(name) {
+            console.log(name);
+        }
+
+        printName2("Ion");
+        const printName2 = function (name) {
+            console.log(name);
+        }
+    </script>
+</body>
+
+</html>
